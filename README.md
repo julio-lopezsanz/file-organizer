@@ -23,7 +23,7 @@ The script scans a target directory and moves files into subfolders based on the
 - `.zip, .rar, .7z` -> **Archives**
 
 ## Technologies Used
-* **Python 3.x**
+* **Python 3.6 or higher**
 * **Pathlib Module** (best option and more modern than the OS module)
 * **Shutil Module** (for high-level file operations)
 * **Watchdog Library** (monitor file system events in real time)
@@ -32,12 +32,15 @@ The script scans a target directory and moves files into subfolders based on the
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/julio-lopezsanz/file-organizer.git
+   ```
 2. **Install dependencies:**
    ```bash 
    pip install watchdog
+   ```
 3. **Run the script:**
    ```bash 
    python main.py
+   ```
 
 ## Learning Journey
 **By building this project, I am practicing:**
