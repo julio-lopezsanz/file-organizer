@@ -9,6 +9,10 @@ I built this project to automate the process of organizing directories (like the
 - **Automatic Sorting:** Groups files into categories like `Images`, `Documents`, and `Media`.
 - **Safety Checks:** Verifies directory existence before moving files.
 - **Extensible:** Easy to add new file extensions and categories.
+- Real-time monitoring using Watchdog.
+- Automatic handling of naming conflicts (file_1, file_2...).
+- Pre-cleaning of existing files on startup.
+- Cross-platform compatibility (Path.home).
 
 ## How it works
 The script scans a target directory and moves files into subfolders based on their extension:
