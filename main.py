@@ -121,6 +121,10 @@ rules = {
 }
 root_dir = Path.home() / "Downloads"
 
+#Iterate only through files, ignoring folders and the script itself
+for files in root_dir.iterdir():
+    organize_file(files)
+
 # Setup Watchdog observer to monitor root_dir without recursion
 observer = Observer()
 observer.schedule(FileHandler(), root_dir, recursive=False)
@@ -135,7 +139,3 @@ except KeyboardInterrupt:
     # Handle Ctrl+C to stop the observer and exit cleanly
     observer.stop()
 observer.join()
-
-#Iterate only through files, ignoring folders and the script itself
-for files in root_dir.iterdir():
-    organize_file(files)
