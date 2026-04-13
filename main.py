@@ -6,7 +6,20 @@ and organizing incoming files into specific subfolders based on their
 file extensions using pathlib and watchdog.
 """
 import shutil
+import time
 from pathlib import Path
+from watchdog.observers import Observer
+from watchdog.events import FileSystemEventHandler
+
+class FileHandler(FileSystemEventHandler):
+    """
+    Run the script automatically every time a new file is downloaded
+
+    Attributes:
+        event (obj): Report any incidents that have occurred. 
+    """
+    def on_created(self, event):
+        organize_file(Path(event.src_path))
 
 def get_unique_path(destination, filename):
     """
@@ -91,6 +104,18 @@ rules = {
     ".7z": "Archives"
 }
 root_dir = Path.home() / "Downloads"
+
+observer = Observer()
+observer.schedule(FileHandler(), root_dir, recursive=False)
+observer.start()
+print("Organizer active. Press Ctrl+C to stop.")
+
+try:
+    while True:
+        time.sleep(1)
+except KeyboardInterrupt:
+    observer.stop()
+observer.join()
 
 #Iterate only through files, ignoring folders and the script itself
 for files in root_dir.iterdir():
