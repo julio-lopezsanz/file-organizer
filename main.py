@@ -23,7 +23,7 @@ class FileHandler(FileSystemEventHandler):
         Validates and triggers the organization logic.
         Filters out directories and temporary download files.
         """
-        if file_path.suffix.lower() not in [".tmp", ".crdownload", ".part"]:
+        if file_path.is_file() and file_path.suffix.lower() not in [".tmp", ".crdownload", ".part"]:
             organize_file(file_path)
 
     def on_created(self, event):
