@@ -73,11 +73,11 @@ Construí este proyecto para automatizar el proceso de organización de director
 ## Cómo funciona
 El script escanea un directorio objetivo y mueve los archivos a subcarpetas según su extensión:
 
-`.jpg, .png, .gif` -> **Imágenes**
-`.pdf, .docx, .txt` -> **Documentos**
-`.mp3, .wav, .aac` -> **Audio**
-`.mp4, .avi, .mkv` -> **Video**
-`.zip, .rar, .7z` -> **Archivos Comprimidos**
+- `.jpg, .png, .gif` -> **Imágenes**
+- `.pdf, .docx, .txt` -> **Documentos**
+- `.mp3, .wav, .aac` -> **Audio**
+- `.mp4, .avi, .mkv` -> **Video**
+- `.zip, .rar, .7z` -> **Archivos Comprimidos**
 
 ## Tecnologías Utilizadas
 
